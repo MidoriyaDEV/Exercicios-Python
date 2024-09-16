@@ -1,23 +1,31 @@
-print('CALCULAR SEU IMC')
-peso = float(input('Qual é seu peso? (KG)'))
-altura = float(input('Qual é sua altura? (M)'))
-IMC = peso / (altura ** 2)
-print('SEU IMC é {:.1f}'.format(IMC))
-if IMC < 18.5:
-    print('Você está abaixo do IDEAL.')
-elif IMC == 18.5 and IMC <= 25:
-    print('Você está com PESO IDEAL.')
-elif IMC > 25 and IMC <= 30:
-    print('Você está com SOBREPESO.')
-elif IMC > 30 and IMC <= 40:
-    print('Você está com OBESIDADE.')
-elif IMC > 40:
-    print('Você está com OBESIDADE MÓRBIDA.')
+print('{:=^40}'.format(' LOJAS VITTOR '))
+produto = float(input('Preço das compras: R$'))
+print(''' FORMAS DE PAGAMENTO
+[ 1 ] à vista dinheiro/cheque:
+[ 2 ] à vista no cartão:
+[ 3 ] até 2x no cartão:
+[ 4 ] 3x ou mais no cartão:''')
+options = int(input('Qual é a opção? '))
+if options == 1:
+    total = produto - (produto * 10 / 100)
+elif options == 2:
+    total = produto - (produto * 5 / 100)
+elif options == 3:
+    total = produto
+    parcela = total / 2
+    print('Sua compra será parcelada em {}x de R${:.2f}'.format(parcela, total))
+elif options == 4:
+    total = produto + (produto * 20 / 100)
+    totalparc = int(input('Quantas parcelas? '))
+    parcela = total / totalparc
+    print('Sua compra será parcelada em {}x de R${:.2f}'.format(totalparc, parcela))
+else:
+    print('ERROR - CODIGO INVALIDO')
+print('Sua compra de R${:.2f} vai custar R${:.2f} no final.'.format(produto, total))
 
+#Elabore um programa que calcule o valor a ser pago por um produto, considerando o seu preço normal e condição de pagamento:
+#– à vista dinheiro/cheque: 10% de desconto
+#– à vista no cartão: 5% de desconto
+#– em até 2x no cartão: preço formal
+#– 3x ou mais no cartão: 20% de juros
 
-#desenvolva uma lógica que leia o peso e a altura de uma pessoa, calcule seu Índice de Massa Corporal (IMC) e mostre seu status, de acordo com a tabela abaixo:
-#– IMC abaixo de 18,5: Abaixo do Pes
-#– Entre 18,5 e 25: Peso Ideal
-#– 25 até 30: Sobrepeso
-#– 30 até 40: Obesidade
-#– Acima de 40: Obesidade Mórbida
