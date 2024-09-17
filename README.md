@@ -14,5 +14,5 @@ Cada exercício inclui um código-fonte comentado e exemplos práticos para faci
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/MidoriyaDEV/exercicios-python.git
+   git clone https://github.com/MidoriyaDEV/Exercicios-Python
 
